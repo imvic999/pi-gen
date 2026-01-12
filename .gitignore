@@ -1,7 +1,8 @@
 deploy/*
 work/*
+#config
 postrun.sh
-SKIP
-SKIP_IMAGES
+#SKIP
+#SKIP_IMAGES
 .pc
 *-pc
