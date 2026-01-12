@@ -1,0 +1,14 @@
+[Unit]
+Description=UDP packet rewrite and forward from 127.0.0.1:1701 to chirpstackServerIP:1700
+After=network-online.target
+
+[Service]
+ExecStart=/home/pi/udp_freqReWrite.sh
+WorkingDirectory=/home/pi
+Restart=always
+RestartSec=5
+SyslogIdentifier=udpRewrite
+
+[Install]
+WantedBy=multi-user.target
+RequiredBy=ttn-gateway.service

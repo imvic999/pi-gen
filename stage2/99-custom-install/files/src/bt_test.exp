@@ -1,0 +1,40 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set device_mac [lindex $argv 0]
+
+spawn bluetoothctl
+
+expect "#"
+send "power on\r"
+
+expect "#"
+send "agent on\r"
+
+expect "#"
+send "default-agent\r"
+
+expect "#"
+send "scan on\r"
+
+expect "\[NEW\] Device $device_mac"
+
+expect "#"
+send "pair $device_mac\r"
+
+expect "#"
+send "trust $device_mac\r"
+
+expect {
+    "Confirm passkey" { send "yes\r"; exp_continue }
+    "Pairing successful" {}
+}
+
+expect "#"
+send "connect $device_mac\r"
+
+expect "#"
+send "exit\r"
+
+# 結束 expect
+expect eof

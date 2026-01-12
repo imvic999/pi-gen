@@ -1,0 +1,11 @@
+[Unit]
+Description=RAK First Boot Setup
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/rak-init.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
