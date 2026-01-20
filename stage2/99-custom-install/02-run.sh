@@ -22,4 +22,5 @@ install -m 755 files/src/vicRX "${ROOTFS_DIR}/home/pi/src/"
 on_chroot << EOF
 systemctl enable udpRewrite.service
 systemctl enable battery-monitor.service
+systemctl enable uap0-setup.service
 EOF

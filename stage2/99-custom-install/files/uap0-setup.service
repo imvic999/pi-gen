@@ -2,10 +2,14 @@
 Description=Create and bring up uap0 virtual AP interface
 Before=network-pre.target
 After=sys-subsystem-net-devices-wlan0.device
+Wants=sys-subsystem-net-devices-wlan0.device
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/create_uap0.sh
+# 如果失敗，3 秒後重試一次
+Restart=on-failure
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target

@@ -1,4 +1,6 @@
 libgpiod-dev
 git
+expect
+tcl
 hostapd
 dnsmasq
