@@ -1,2 +1,4 @@
 libgpiod-dev
 git
+hostapd
+dnsmasq

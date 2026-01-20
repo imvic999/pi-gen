@@ -11,6 +11,15 @@ install -m 755 files/udp_freqReWrite_dqa.sh	"${ROOTFS_DIR}/home/pi/"
 #install -m 644 files/global_conf.json "${ROOTFS_DIR}/opt/ttn-gateway/packet_forwarder/lora_pkt_fwd/"
 install -m 644 files/udpRewrite.service	"${ROOTFS_DIR}/lib/systemd/system/"
 
+mkdir -p "${ROOTFS_DIR}/home/pi/src/"
+install -m 755 files/src/power_detect "${ROOTFS_DIR}/home/pi/src/"
+install -m 644 files/battery-monitor.service	"${ROOTFS_DIR}/lib/systemd/system/"
+
+install -m 755 files/uart_test "${ROOTFS_DIR}/home/pi/src/"
+install -m 755 files/vicTX "${ROOTFS_DIR}/home/pi/src/"
+install -m 755 files/vicRX "${ROOTFS_DIR}/home/pi/src/"
+
 on_chroot << EOF
 systemctl enable udpRewrite.service
+systemctl enable battery-monitor.service
 EOF

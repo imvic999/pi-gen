@@ -1,0 +1,16 @@
+[Unit]
+Description=Battery Status Monitor for CM5
+After=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/home/pi/src/power_detect
+Restart=always
+RestartSec=30
+#StandardOutput=syslog
+#StandardError=syslog
+StandardOutput=null
+StandardError=null
+ 
+[Install]
+WantedBy=multi-user.target
