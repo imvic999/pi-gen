@@ -35,4 +35,4 @@ else
 fi
 
 # 5. 設定靜態 IP (如果您之前是透過 NetworkManager 設定，這行可以選用)
-ip addr add 192.168.2.1/24 dev uap0
+ip addr add 10.0.0.1/24 dev uap0
