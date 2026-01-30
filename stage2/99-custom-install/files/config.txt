@@ -52,3 +52,4 @@ dtoverlay=dwc2,dr_mode=host
 dtparam=uart0=on
 enable_uart=1
 dtoverlay=uart4-pi5
+dtparam=ant1
