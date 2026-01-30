@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+raspi-config nonint do_i2c 0
+raspi-config nonint do_spi 0
+raspi-config nonint do_serial_hw 0
+raspi-config nonint do_serial_cons 1
+
 cd /home/pi
 
 rm -rf rak_common_for_gateway

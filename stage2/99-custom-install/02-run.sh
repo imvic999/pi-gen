@@ -19,6 +19,8 @@ install -m 755 files/src/uart_test "${ROOTFS_DIR}/home/pi/src/"
 install -m 755 files/src/vicTX "${ROOTFS_DIR}/home/pi/src/"
 install -m 755 files/src/vicRX "${ROOTFS_DIR}/home/pi/src/"
 
+install -m 755 files/config.txt "${ROOTFS_DIR}/boot/firmware/"
+
 on_chroot << EOF
 systemctl enable udpRewrite.service
 systemctl enable battery-monitor.service
